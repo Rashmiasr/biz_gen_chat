@@ -24,7 +24,7 @@ if(isset($_POST['enter'])){
 function loginForm(){
     echo
     '<div id="loginform">
-    <p>Please enter your name to continue!</p>
+    <p>Please enter your name !</p>
     <form action="index.php" method="post">
       <label for="name">Name &mdash;</label>
       <input type="text" name="name" id="name" />
