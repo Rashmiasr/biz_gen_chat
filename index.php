@@ -24,7 +24,7 @@ if(isset($_POST['enter'])){
 function loginForm(){
     echo
     '<div id="loginform">
-    <p>Please enter your name !</p>
+    <p>Please enter your name to continue!</p>
     <form action="index.php" method="post">
       <label for="name">Name &mdash;</label>
       <input type="text" name="name" id="name" />
@@ -51,7 +51,6 @@ function loginForm(){
     }
     else {
     ?>
-    <div class="container">
         <div id="wrapper">
             <div id="menu">
                 <p class="welcome">Welcome, <b><?php echo $_SESSION['name']; ?></b></p>
@@ -72,7 +71,6 @@ function loginForm(){
                 <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
             </form>
         </div>
-    </div>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="text/javascript">
             // jQuery Document
