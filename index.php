@@ -51,6 +51,7 @@ function loginForm(){
     }
     else {
     ?>
+   
         <div id="wrapper">
             <div id="menu">
                 <p class="welcome">Welcome, <b><?php echo $_SESSION['name']; ?></b></p>
@@ -70,7 +71,8 @@ function loginForm(){
                 <input name="usermsg" type="text" id="usermsg" />
                 <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
             </form>
-        </div>
+        
+    </div>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="text/javascript">
             // jQuery Document
