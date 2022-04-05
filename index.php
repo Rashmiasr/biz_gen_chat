@@ -81,7 +81,7 @@ function loginForm(){
             $(document).ready(function () {
                 $("#submitmsg").click(function () {
                     var clientmsg = $("#usermsg").val();
-                 alert(clientmsg);
+                
                     $.post("post.php", { text: clientmsg });
                     $("#usermsg").val("");
                     return false;
