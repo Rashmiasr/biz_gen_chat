@@ -67,7 +67,7 @@ function loginForm(){
             ?>
             </div>
  
-            <form name="message" action="">
+            <form name="message" action="" target='myframe'>
                 <input name="usermsg" type="text" id="usermsg" />
                 <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
             </form>
@@ -77,13 +77,13 @@ function loginForm(){
         <script type="text/javascript">
             // jQuery Document
             $(document).ready(function () {
-               /* $("#submitmsg").click(function () {
+                $("#submitmsg").click(function () {
                     var clientmsg = $("#usermsg").val();
                     $.post("post.php", { text: clientmsg });
                     $("#usermsg").val("");
                     return false;
                 });
- */
+ 
                 function loadLog() {
                     var oldscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Scroll height before the request
  
@@ -115,11 +115,5 @@ function loginForm(){
     </body>
 </html>
 <?php
-}
-     if(isset($_POST['submitmsg'])){
-   $text = $_POST['text'];
-   
-    $text_message = "<div class='msgln'><span class='chat-time'>".date("g:i A")."</span> <b class='user-name'>".$_SESSION['name']."</b> ".stripslashes(htmlspecialchars($text))."<br></div>";
-    file_put_contents("log.html", $text_message, FILE_APPEND | LOCK_EX);
 }
 ?>
