@@ -1,8 +1,7 @@
 <?php
  
 session_start();
-
-
+ 
 if(isset($_GET['logout'])){    
      
     //Simple exit message
@@ -16,7 +15,6 @@ if(isset($_GET['logout'])){
 if(isset($_POST['enter'])){
     if($_POST['name'] != ""){
         $_SESSION['name'] = stripslashes(htmlspecialchars($_POST['name']));
-    
     }
     else{
         echo '<span class="error">Please type in a name</span>';
@@ -28,6 +26,7 @@ function loginForm(){
     '<div id="loginform">
     <p>Please enter your name to continue!</p>
     <form action="index.php" method="post">
+      <label for="name">Name &mdash;</label>
       <input type="text" name="name" id="name" />
       <input type="submit" name="enter" id="enter" value="Enter" />
     </form>
@@ -74,7 +73,7 @@ function loginForm(){
             </form>
         
     </div>
-       
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="text/javascript">
             // jQuery Document
             $(document).ready(function () {
@@ -113,7 +112,6 @@ function loginForm(){
                 });
             });
         </script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </body>
 </html>
 <?php
