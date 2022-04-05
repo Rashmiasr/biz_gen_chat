@@ -67,7 +67,7 @@ function loginForm(){
             ?>
             </div>
  
-            <form name="message" id='chatform' method='post' action='post.php'>
+            <form name="message" action="">
                 <input name="usermsg" type="text" id="usermsg" />
                 <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
             </form>
@@ -77,20 +77,13 @@ function loginForm(){
         <script type="text/javascript">
             // jQuery Document
             $(document).ready(function () {
- let xhr = new XMLHttpRequest();
-             $.ajax({
-  type: "POST",
-  url: "post.php",
-  data: `{
-   "text":clientmsg
-  }`,
-  success: function () {
-    if (xhr.readyState === 4) {
-      console.log(xhr.status);
-      console.log(xhr.responseText);
-  }},
-  dataType: "json"
-});
+                $("#submitmsg").click(function () {
+                    var clientmsg = $("#usermsg").val();
+                    $.post("post.php", { text: clientmsg });
+                    $("#usermsg").val("");
+                    return false;
+                });
+ 
                 function loadLog() {
                     var oldscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Scroll height before the request
  
