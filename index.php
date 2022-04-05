@@ -51,9 +51,6 @@ function loginForm(){
         loginForm();
     }
     else {
-     $cookieParams = session_get_cookie_params();
-    $cookieParams[samesite] = "None";
-    session_set_cookie_params($cookieParams);
     ?>
    
         <div id="wrapper">
