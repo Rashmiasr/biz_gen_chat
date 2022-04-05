@@ -77,7 +77,8 @@ function loginForm(){
         <script type="text/javascript">
             // jQuery Document
             $(document).ready(function () {
-                $("#submitmsg").click(function () {
+                $("#submitmsg").click(function (event) {
+                 event.preventDefault();
                     var clientmsg = $("#usermsg").val();
                    // $.post("post.php", { text: clientmsg });
                     $("#usermsg").val("");
