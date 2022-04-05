@@ -77,15 +77,20 @@ function loginForm(){
         <script type="text/javascript">
             // jQuery Document
             $(document).ready(function () {
-                $("#submitmsg").click(function (event) {
-                 event.preventDefault();
-                    var clientmsg = $("#usermsg").val();
-                   // $.post("post.php", { text: clientmsg });
-                 document.getElementById("chatform").submit();
-                    $("#usermsg").val("");
-                    return false;
-                });
- 
+ let xhr = new XMLHttpRequest();
+             $.ajax({
+  type: "POST",
+  url: "post.php",
+  data: `{
+   "text":clientmsg
+  }`,
+  success: function () {
+    if (xhr.readyState === 4) {
+      console.log(xhr.status);
+      console.log(xhr.responseText);
+  }},
+  dataType: "json"
+});
                 function loadLog() {
                     var oldscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Scroll height before the request
  
