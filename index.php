@@ -67,7 +67,7 @@ function loginForm(){
             ?>
             </div>
  
-            <form name="message" method="post" target='my-frame' action='post.php'>
+            <form name="message" action="">
                 <input name="usermsg" type="text" id="usermsg" />
                 <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
             </form>
@@ -77,10 +77,9 @@ function loginForm(){
         <script type="text/javascript">
             // jQuery Document
             $(document).ready(function () {
-                $("#submitmsg").click(function (event) {
-                 event.preventDefault();
+                $("#submitmsg").click(function () {
                     var clientmsg = $("#usermsg").val();
-                   // $.post("post.php", { text: clientmsg });
+                    $.post("post.php", { text: clientmsg });
                     $("#usermsg").val("");
                     return false;
                 });
