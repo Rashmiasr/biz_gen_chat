@@ -86,9 +86,9 @@ function loginForm(){
              
         $.ajax({
         url: 'post.php',
-        dataType: 'text',
+       
         type: 'post',
-        contentType: 'application/x-www-form-urlencoded',
+       
         data: $(this).serialize(),
         success: function( data, textStatus, jQxhr ){
             loadLog();
@@ -96,7 +96,7 @@ function loginForm(){
         error: function( jqXhr, textStatus, errorThrown ){
             console.log( errorThrown );
         }
- 
+        });
                 function loadLog() {
                     var oldscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Scroll height before the request
  
