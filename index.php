@@ -67,7 +67,7 @@ function loginForm(){
             ?>
             </div>
  
-            <form name="message" >
+            <form name="message" id='chatform' method='post' action='post.php'>
                 <input name="usermsg" type="text" id="usermsg" />
                 <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
             </form>
@@ -80,7 +80,8 @@ function loginForm(){
                 $("#submitmsg").click(function (event) {
                  event.preventDefault();
                     var clientmsg = $("#usermsg").val();
-                    $.post("post.php", { text: clientmsg });
+                   // $.post("post.php", { text: clientmsg });
+                 document.getElementById("chatform").submit();
                     $("#usermsg").val("");
                     return false;
                 });
