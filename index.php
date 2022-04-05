@@ -16,6 +16,10 @@ if(isset($_GET['logout'])){
 if(isset($_POST['enter'])){
     if($_POST['name'] != ""){
         $_SESSION['name'] = stripslashes(htmlspecialchars($_POST['name']));
+      /*cookies*/
+ $cookieParams = session_get_cookie_params();
+    $cookieParams[samesite] = "None";
+    session_set_cookie_params($cookieParams);
     }
     else{
         echo '<span class="error">Please type in a name</span>';
