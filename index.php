@@ -77,8 +77,9 @@ function loginForm(){
         <script type="text/javascript">
             // jQuery Document
             $(document).ready(function () {
-             jQuery.noConflict();
+           
                 $("#submitmsg").click(function () {
+                   jQuery.noConflict();
                     var clientmsg = $("#usermsg").val();
                     $.post("post.php", { text: clientmsg });
                     $("#usermsg").val("");
